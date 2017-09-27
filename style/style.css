@@ -1,0 +1,39 @@
+body {
+      height: 100%;
+      background-image: url(https://static.pexels.com/photos/220201/pexels-photo-220201.jpeg);
+      background-position: center center;
+      background-attachment: fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      font-family: 'Raleway', sans-serif;
+}
+
+.input-group {
+    margin: 20px 0px;
+}
+
+th {
+  font-size: 24px;
+  font-family: 'Cantata One', serif;
+}
+
+td, th {
+  color: black;
+}
+
+.google-map {
+  margin-top: 20%;
+  height:500px;
+}
+
+.places-list {
+  margin-top: 20%;
+  background-color: rgba(167,205,242, 0.8);
+}
+
+td:hover {
+  background-color: #0000A0;
+  color: white;
+}
