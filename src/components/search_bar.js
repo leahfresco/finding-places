@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchTerm } from '../actions/index';
+import { fetchTerm, toggleActivePlace } from '../actions/index';
 
 class SearchBar extends Component {
     constructor(props) {
@@ -21,6 +21,7 @@ class SearchBar extends Component {
     onFormSubmit(event) {
         event.preventDefault();
 
+        this.props.toggleActivePlace(-1);
         this.props.fetchTerm(this.state.term);
         this.setState({ term: '' });
     }
@@ -45,7 +46,7 @@ class SearchBar extends Component {
 }
 
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators({ fetchTerm }, dispatch);
+    return bindActionCreators({ fetchTerm, toggleActivePlace }, dispatch);
 }
 
 export default connect(null, mapDispatchToProps)(SearchBar);

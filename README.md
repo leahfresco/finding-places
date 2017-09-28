@@ -1,7 +1,7 @@
 # Finding Places
 App that allows a user to search for places nearby and get a result from Google Places API
 
-** [Click here to go to the deployed application!](https://finding-places.herokuapp.com/)
+[Click here to go to the deployed application!](https://finding-places.herokuapp.com/)
 
 ## Contents
 * [Features](#features)
@@ -14,12 +14,14 @@ App that allows a user to search for places nearby and get a result from Google 
 #### Geo-located to your current location
 Map is set to default to San Francisco but if user accepts to share location with the browser then the map will center to the user's location and use that location in the search.
 
-
 #### Search for anything
 Type anything from a specific address to "restaurants" or "nail salon" to find places within the map zone.
 
+#### Click on a place to see the marker
+Clicking on a place in the place list isolates the marker to make it obvious which it is. Click on the "Places" header to clear and see all markers.
+
 ## <a name="tech"></a>Technologies
-This single page application is build with React/Redux, Bootstrap and CSS. ReactJS is a front end framework that allows for interactive UIs in which components on the page are modular. Redux allows a central place for data to be stored so that it can flow through components as needed.
+This single page application is build with React/Redux, Bootstrap and CSS. ReactJS is a front end framework that allows for interactive UIs in which components on the page are modular. Redux allows a central place for data to be stored so that it can flow through components as needed. Boilerplate from Stephen Grider was used - can be found [here](https://github.com/StephenGrider/ReduxSimpleStarter).
 
 ## <a name="install"></a>Installation
 

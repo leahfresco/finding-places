@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchPlaces, fetchTerm } from '../actions/index';
+import { fetchPlaces, fetchTerm, toggleActivePlace } from '../actions/index';
 
 let map;
 let infowindow;
+let markers = [];
 
 class GoogleMap extends Component {
 
@@ -20,7 +21,7 @@ class GoogleMap extends Component {
       zoom: 12,
       center: {
         lat: 37.773,
-        lng: 122.431
+        lng: -122.431
       }
     });
 
@@ -48,6 +49,11 @@ class GoogleMap extends Component {
           radius: '10000'
       }
 
+      markers.forEach(function(marker) {
+            marker.setMap(null);
+      });
+      markers = [];
+
       service.textSearch(request, this.renderPlaceMarkers);
     }
   }
@@ -56,26 +62,30 @@ class GoogleMap extends Component {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
       this.props.fetchPlaces(results);
 
-      for (var i = 0; i < results.length; i++) {
-        var place = results[i];
-        this.createMarker(results[i]);
+      if (this.props.id === -1) {
+        for (var i = 0; i < results.length; i++) {
+          var place = results[i];
+          this.createMarker(results[i]);
+        }
+      } else {
+        this.createMarker(results[this.props.id]);
       }
     }
   }
 
   createMarker(place) {
     var placeLoc = place.geometry.location;
-    var marker = new google.maps.Marker({
+    var marker;
+    markers.push(marker = new google.maps.Marker({
       map: map,
       position: place.geometry.location
-    });
+    }));
 
     google.maps.event.addListener(marker, 'click', function() {
       infowindow.setContent(place.name);
       infowindow.open(map, this);
     });
   }
-
 
   render() {
     { this.renderMap() }
@@ -84,11 +94,11 @@ class GoogleMap extends Component {
 }
 
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators({ fetchPlaces }, dispatch);
+    return bindActionCreators({ fetchPlaces, toggleActivePlace }, dispatch);
 }
 
-function mapStateToProps({ term }) {
-	return { term };
+function mapStateToProps({ term, id }) {
+	return { term, id };
 }
 
 
