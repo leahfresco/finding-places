@@ -1,21 +1,21 @@
 # Finding Places
 App that allows a user to search for places nearby and get a result from Google Places API
 
-**[Click here to go to the deployed appliation!](https://finding-places.herokuapp.com/)
+** [Click here to go to the deployed application!](https://finding-places.herokuapp.com/)
 
 ## Contents
-* [Features] (#features)
-* [Technologies] (#tech)
-* [Installation] (#install)
-* [About Me] (#about)
+* [Features](#features)
+* [Technologies](#tech)
+* [Installation](#install)
+* [About Me](#about)
 
 ## <a name="features"></a>Features
 
-####Geo-located to your current location
+#### Geo-located to your current location
 Map is set to default to San Francisco but if user accepts to share location with the browser then the map will center to the user's location and use that location in the search.
 
 
-####Search for anything
+#### Search for anything
 Type anything from a specific address to "restaurants" or "nail salon" to find places within the map zone.
 
 ## <a name="tech"></a>Technologies
