@@ -9,9 +9,6 @@ import reducers from './reducers';
 
 let store = createStore(reducers);
 
-let unsubscribe = store.subscribe(() =>
-  console.log(store.getState())
-)
 
 ReactDOM.render(
   <Provider store={store}>
