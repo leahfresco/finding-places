@@ -20,6 +20,9 @@ Type anything from a specific address to "restaurants" or "nail salon" to find p
 #### Click on a place to see the marker
 Clicking on a place in the place list isolates the marker to make it obvious which it is. Click on the "Places" header to clear and see all markers.
 
+#### Device responsive
+Application responds to the screen size to be a great user experience across desktop or mobile.
+
 ## <a name="tech"></a>Technologies
 This single page application is build with React/Redux, Bootstrap and CSS. ReactJS is a front end framework that allows for interactive UIs in which components on the page are modular. Redux allows a central place for data to be stored so that it can flow through components as needed. Boilerplate from Stephen Grider was used - can be found [here](https://github.com/StephenGrider/ReduxSimpleStarter).
 
